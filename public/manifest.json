@@ -1,0 +1,15 @@
+{
+  "name": "HBC Web - 県広放送部公式Webサイト",
+  "short_name": "HBC Web",
+  "start_url": "/",
+  "desctiption": "広島県立広島中学校・広島高等学校 放送部（Hiroshima Broadcasting Club）の公式Webサイトです。放送部の活動などを紹介しています。",
+  "display": "minimal-ui",
+  "theme_color": "#5c0000",
+  "background_color": "#5c0000",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any" },
+    { "src": "/icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any" },
+    { "src": "/icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}
