@@ -4,8 +4,8 @@
   "start_url": "/",
   "desctiption": "広島県立広島中学校・広島高等学校 放送部（Hiroshima Broadcasting Club）の公式Webサイトです。放送部の活動などを紹介しています。",
   "display": "minimal-ui",
-  "theme_color": "#5c0000",
-  "background_color": "#5c0000",
+  "theme_color": "#b91c1c",
+  "background_color": "#b91c1c",
   "icons": [
     { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any" },
     { "src": "/icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
