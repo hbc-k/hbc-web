@@ -1,3 +1,14 @@
+<script setup lang="ts">
+const { data } = await useAsyncData('info', () => queryContent('/data/info').findOne());
+const infos: { title: string; description: string; url: string; newTab?: boolean; date: string }[] = (() => {
+  if (data.value) {
+    return data.value.body;
+  } else {
+    return [];
+  }
+})();
+</script>
+
 <template>
   <section class="pointer-events-none bg-[url('/assets/img/building.webp')] bg-cover shadow-md">
     <div class="bg-black bg-opacity-40 backdrop-blur">
@@ -14,7 +25,18 @@
   <section>
     <div class="mx-auto max-w-6xl px-4 py-10 md:px-8">
       <div class="mb-6 text-center text-gray-800">
-        <h1><span class="text-2xl font-bold">Pickup!</span><span class="ml-4">放送部からのお知らせ</span></h1>
+        <h1><span class="text-2xl font-bold">Info</span><span class="ml-4">放送部からのお知らせ</span></h1>
+      </div>
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <InfoCard
+          v-for="info in infos"
+          :key="info.title"
+          :title="info.title"
+          :description="info.description"
+          :url="info.url"
+          :new-tab="info.newTab"
+          :date="info.date"
+        />
       </div>
     </div>
   </section>
