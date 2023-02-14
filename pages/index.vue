@@ -32,7 +32,7 @@
         </p>
       </div>
       <div class="text-center">
-        <ButtonLinkRightArrow to="/about">もっと詳しく</ButtonLinkRightArrow>
+        <ButtonLinkArrowRight to="/about">もっと詳しく</ButtonLinkArrowRight>
       </div>
     </div>
   </section>
@@ -42,7 +42,7 @@
         <h1><span class="text-2xl font-bold">Blog</span><span class="ml-4">部員が活動の様子をお届け！</span></h1>
       </div>
       <div class="text-center">
-        <ButtonLinkRightArrow to="/">もっと見る</ButtonLinkRightArrow>
+        <ButtonLinkArrowRight to="/">もっと見る</ButtonLinkArrowRight>
       </div>
     </div>
   </section>
