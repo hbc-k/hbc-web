@@ -1,14 +1,15 @@
 <script setup lang="ts">
 const links: { name: string; to: string }[] = [
-  { name: 'ホーム', to: '/' },
-  { name: '放送部について', to: '/about' },
-  { name: 'お問い合わせ', to: '/contact' },
+  { name: 'Home', to: '/' },
+  { name: 'About', to: '/about' },
+  { name: 'Blog', to: '/blog' },
+  { name: 'Contact', to: '/contact' },
 ];
 </script>
 
 <template>
   <div class="bg-red-700 bg-opacity-95 text-white shadow-md backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center px-4 py-4 sm:px-6">
+    <div class="mx-auto flex max-w-7xl items-center px-4 py-4 sm:px-6">
       <NuxtLink to="/" class="flex items-center">
         <TheLogo class="mr-2 h-7 w-auto shrink-0 fill-white" />
         <div class="hidden text-[0.7rem] leading-tight sm:block">
