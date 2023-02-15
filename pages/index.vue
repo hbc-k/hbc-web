@@ -81,14 +81,14 @@ const { data: blogPosts } = await useAsyncData('articles', () => queryContent<Bl
   </section>
   <section>
     <div class="mx-auto max-w-7xl px-4 py-10 md:px-8">
-      <div class="mb-8 text-gray-800">
+      <div class="mb-10 text-gray-800">
         <div class="items-center text-center">
           <span class="relative bottom-0.5 mr-4 text-2xl"><font-awesome-icon icon="fa-solid fa-pen-clip" /></span>
           <h1 class="inline text-3xl uppercase">Blog</h1>
           <p class="mt-2">不定期更新</p>
         </div>
       </div>
-      <div class="mb-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div class="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <BlogCard
           v-for="article in blogPosts"
           :key="article.title"
