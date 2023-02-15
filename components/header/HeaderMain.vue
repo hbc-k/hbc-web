@@ -17,13 +17,13 @@ const links: { name: string; to: string }[] = [
           <p>公式Webサイト「HBC Web」</p>
         </div>
       </NuxtLink>
-      <div class="ml-auto hidden sm:block">
+      <nav class="ml-auto hidden sm:block">
         <ul>
           <li v-for="link in links" :key="link.name" class="ml-4 inline-block">
-            <HeaderLink to="/">{{ link.name }}</HeaderLink>
+            <HeaderLink :to="link.to">{{ link.name }}</HeaderLink>
           </li>
         </ul>
-      </div>
+      </nav>
       <div class="ml-auto block sm:hidden"><font-awesome-icon icon="fa-solid fa-bars" class="text-2xl" /></div>
     </div>
   </div>
