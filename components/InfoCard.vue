@@ -6,7 +6,6 @@ interface Props {
   url: string;
   newTab?: boolean;
   date: string;
-  pin?: boolean;
 }
 const Props = defineProps<Props>();
 </script>
@@ -14,7 +13,7 @@ const Props = defineProps<Props>();
 <template>
   <NuxtLink :to="url" :target="newTab ? '_blank' : '_self'">
     <div
-      class="group relative flex h-full flex-col rounded-lg border shadow-md transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:text-red-600"
+      class="group relative flex h-full flex-col rounded-lg border bg-white shadow transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:text-red-600 hover:shadow-md"
     >
       <div class="p-5">
         <div class="mb-3 text-sm">
