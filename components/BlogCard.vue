@@ -25,7 +25,7 @@ const dateString = new Date(Props.createDate).toLocaleDateString('sv-SE');
       </div>
       <div class="p-5">
         <div class="mb-2 text-sm text-gray-600 transition duration-300 group-hover:border-red-200 group-hover:text-red-400">
-          <div class="flex">
+          <div class="flex items-center">
             <div>
               <font-awesome-icon icon="fa-regular fa-folder" />
               <span class="ml-1">
