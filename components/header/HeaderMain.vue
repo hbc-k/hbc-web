@@ -2,6 +2,7 @@
 const links: { name: string; to: string }[] = [
   { name: 'Home', to: '/' },
   { name: 'About', to: '/about' },
+  { name: 'Program', to: '/program' },
   { name: 'Blog', to: '/blog' },
   { name: 'Contact', to: '/contact' },
 ];
