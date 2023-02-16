@@ -16,7 +16,9 @@ interface Author extends ParsedContent {
   displayName: string;
   icon: string;
 }
-const { data: authorData } = await useAsyncData(Props.author, () => queryContent<Author>('blog', 'author', Props.author).findOne());
+const { data: authorData } = await useAsyncData(Props.author, () =>
+  queryContent<Author>('blog', 'author').where({ userName: Props.author }).findOne()
+);
 </script>
 
 <template>
