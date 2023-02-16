@@ -2,6 +2,7 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
 interface Info extends ParsedContent {
+  category: string;
   url: string;
   newTab?: boolean;
   date: string;
@@ -47,6 +48,7 @@ const { data: blogPosts } = await useAsyncData('articles', () => queryContent<Bl
           v-for="info in pinnedInfos"
           :title="info.title ? info.title : 'undefinded'"
           :description="info.description"
+          :category="info.category"
           :url="info.url"
           :newTab="info.newTab"
           :date="info.date"
