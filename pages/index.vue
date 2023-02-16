@@ -18,7 +18,7 @@ interface BlogPost extends ParsedContent {
   createDate: string;
   updateDate: string;
 }
-const { data: blogPosts } = await useAsyncData('articles', () => queryContent<BlogPost>('blog', 'posts').sort({ createDate: -1 }).limit(3).find());
+const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogPost>('blog', 'posts').sort({ createDate: -1 }).limit(3).find());
 </script>
 
 <template>
@@ -57,7 +57,7 @@ const { data: blogPosts } = await useAsyncData('articles', () => queryContent<Bl
       </div>
     </div>
   </section>
-  <section class="bg-gray-200">
+  <section class="bg-red-50">
     <div class="mx-auto max-w-4xl px-4 py-10 sm:px-8">
       <div class="mb-10 text-gray-800">
         <div class="items-center text-center">

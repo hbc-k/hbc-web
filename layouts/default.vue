@@ -3,7 +3,7 @@
     <div class="sticky top-0 z-40">
       <HeaderMain />
     </div>
-    <div class="flex-grow">
+    <div class="flex-grow bg-gray-50">
       <slot />
     </div>
     <div>
