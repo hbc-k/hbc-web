@@ -12,7 +12,6 @@ interface Props {
 }
 
 const Props = defineProps<Props>();
-const dateString = new Date(Props.createDate).toLocaleDateString('sv-SE');
 </script>
 
 <template>
@@ -41,7 +40,7 @@ const dateString = new Date(Props.createDate).toLocaleDateString('sv-SE');
             <div class="ml-auto">
               <font-awesome-icon icon="fa-regular fa-clock" />
               <span class="ml-1">
-                {{ dateString }}
+                {{ new Date(createDate).toLocaleDateString('sv-SE') }}
               </span>
             </div>
           </div>
