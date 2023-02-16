@@ -24,7 +24,7 @@ const dateString = new Date(Props.createDate).toLocaleDateString('sv-SE');
         <img :src="`/img/posts/${coverImage}`" alt="" class="transition duration-500 group-hover:scale-[103%]" />
       </div>
       <div class="px-5 py-5">
-        <div class="mb-2 text-sm text-gray-600 transition group-hover:border-red-200 group-hover:text-red-400">
+        <div class="mb-2 text-sm text-gray-600 transition duration-300 group-hover:border-red-200 group-hover:text-red-400">
           <div class="flex">
             <div>
               <font-awesome-icon icon="fa-regular fa-folder" />
@@ -50,7 +50,7 @@ const dateString = new Date(Props.createDate).toLocaleDateString('sv-SE');
           <h2 class="text-xl font-bold">
             {{ title }}
           </h2>
-          <p class="mt-1 truncate text-gray-600 transition group-hover:text-red-400">
+          <p class="mt-1 truncate text-gray-600 transition duration-300 group-hover:text-red-400">
             {{ description }}
           </p>
         </div>
