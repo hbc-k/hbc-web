@@ -1,13 +1,13 @@
 <template>
   <div class="flex min-h-screen flex-col">
-    <div class="sticky top-0 z-40">
+    <header class="sticky top-0 z-40">
       <HeaderMain />
-    </div>
+    </header>
     <div class="flex-grow bg-gray-50">
       <slot />
     </div>
-    <div>
+    <footer>
       <FooterMain />
-    </div>
+    </footer>
   </div>
 </template>
