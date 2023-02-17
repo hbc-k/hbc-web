@@ -44,16 +44,7 @@ const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogP
         </div>
       </div>
       <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <InfoCard
-          v-for="info in pinnedInfos"
-          :title="info.title ? info.title : 'undefinded'"
-          :description="info.description"
-          :category="info.category"
-          :url="info.url"
-          :newTab="info.newTab"
-          :date="info.date"
-          :pin="info.pin"
-        />
+        <InfoCard v-for="info in pinnedInfos" :info="info" />
       </div>
     </div>
   </section>
@@ -91,19 +82,7 @@ const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogP
         </div>
       </div>
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <BlogCard
-          v-for="article in blogPosts"
-          :key="article.title"
-          :to="article._path!"
-          :title="article.title ? article.title : 'undefinded'"
-          :description="article.description"
-          :author="article.author"
-          :category="article.category"
-          :tags="article.tags"
-          :coverImage="article.coverImage"
-          :createDate="article.createDate"
-          :updateDate="article.updateDate"
-        />
+        <BlogCard v-for="article in blogPosts" :article="article" />
       </div>
       <div class="mt-8 text-center">
         <ButtonLinkArrowRight to="/blog">もっと見る</ButtonLinkArrowRight>
