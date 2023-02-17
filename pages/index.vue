@@ -65,7 +65,7 @@ const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogP
           <p class="mt-2">放送部について</p>
         </div>
       </div>
-      <div class="mb-10 text-center">
+      <div class="text-center">
         <h2 class="text-3xl leading-relaxed text-red-700">
           <span class="inline-block">広島県立広島中学校・</span><span class="inline-block">広島高等学校 放送部は</span><br /><span
             class="inline-block"
@@ -76,21 +76,21 @@ const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogP
           2004年（平成16年）の開校以来、校内の行事や式典における司会・撮影・音響、学校紹介ビデオをはじめとした各種ビデオの制作、お昼の休憩時間中の放送、各種大会への参加など、さまざまな活動を行っています。
         </p>
       </div>
-      <div class="text-center">
+      <div class="mt-10 text-center">
         <ButtonLinkArrowRight to="/about">もっと詳しく</ButtonLinkArrowRight>
       </div>
     </div>
   </section>
   <section>
     <div class="mx-auto max-w-7xl px-4 py-10 md:px-8">
-      <div class="mb-10 text-gray-800">
+      <div class="mb-8 text-gray-800">
         <div class="items-center text-center">
           <span class="relative bottom-0.5 mr-4 text-2xl"><font-awesome-icon icon="fa-solid fa-pen-clip" /></span>
           <h1 class="inline text-3xl uppercase">Blog</h1>
           <p class="mt-2">不定期更新</p>
         </div>
       </div>
-      <div class="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <BlogCard
           v-for="article in blogPosts"
           :key="article.title"
@@ -105,7 +105,7 @@ const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogP
           :updateDate="article.updateDate"
         />
       </div>
-      <div class="text-center">
+      <div class="mt-8 text-center">
         <ButtonLinkArrowRight to="/blog">もっと見る</ButtonLinkArrowRight>
       </div>
     </div>
