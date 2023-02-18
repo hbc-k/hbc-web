@@ -9,7 +9,13 @@ interface BlogPost extends ParsedContent {
   createDate: string;
   updateDate: string;
 }
-const { data: blogPosts } = await useAsyncData('posts', () => queryContent<BlogPost>('blog', 'posts').sort({ createDate: -1 }).find());
+const { data: blogPosts } = await useAsyncData('posts', () =>
+  queryContent<BlogPost>('blog', 'posts')
+    .only(['_path', 'title', 'description', 'author', 'category', 'coverImage', 'createDate'])
+    .sort({ createDate: -1 })
+    .limit(3)
+    .find()
+);
 </script>
 
 <template>
