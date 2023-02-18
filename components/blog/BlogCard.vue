@@ -27,9 +27,9 @@ const Props = defineProps<Props>();
       </div>
       <div class="mb-1 text-sm text-gray-500 transition duration-300 group-hover:text-red-400">
         <font-awesome-icon icon="fa-regular fa-folder" />
-        <span class="ml-1">
+        <NuxtLink :to="`/blog/category/${article.category}`" class="ml-1 hover:underline">
           {{ article.category }}
-        </span>
+        </NuxtLink>
       </div>
       <div>
         <h2 class="text-xl font-bold">
