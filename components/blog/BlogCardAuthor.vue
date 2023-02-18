@@ -24,7 +24,10 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
 
 <template>
   <div class="flex items-center">
-    <NuxtLink :to="`/blog/author/${author}`" class="aspect-square h-9 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover">
+    <NuxtLink
+      :to="`/blog/author/${author}`"
+      class="relative z-10 aspect-square h-9 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover"
+    >
       <img v-if="authorData && authorData.icon" :src="`/img/blog/author/${authorData.icon}`" alt="" class="hover:brightness-90" />
     </NuxtLink>
     <div class="ml-2 overflow-hidden text-sm">
@@ -32,10 +35,10 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
         <NuxtLink
           v-if="authorData && authorData.displayName"
           :to="`/blog/author/${author}`"
-          class="mr-1 font-bold text-black transition duration-300 hover:underline group-hover:text-red-600"
+          class="relative z-10 mr-1 font-bold text-black transition duration-300 hover:underline group-hover:text-red-600"
           >{{ authorData.displayName }}</NuxtLink
         >
-        <NuxtLink :to="`/blog/author/${author}`" class="text-gray-500 transition duration-300 hover:underline group-hover:text-red-400"
+        <NuxtLink :to="`/blog/author/${author}`" class="relative z-10 text-gray-500 transition duration-300 hover:underline group-hover:text-red-400"
           >@{{ author }}</NuxtLink
         >
       </div>
