@@ -20,11 +20,11 @@ const Props = defineProps<Props>();
   >
     <div class="p-5">
       <div class="mb-3 text-sm">
-        <div class="flex items-center">
+        <div class="flex items-center justify-between">
           <div v-if="info.category" class="rounded-full bg-gray-500 px-2.5 py-0.5 text-white transition duration-300 group-hover:bg-red-400">
             {{ info.category }}
           </div>
-          <div v-if="info.date" class="ml-auto text-gray-500 transition duration-300 group-hover:text-red-400">
+          <div v-if="info.date" class="text-gray-500 transition duration-300 group-hover:text-red-400">
             <font-awesome-icon icon="fa-regular fa-clock" />
             <span class="ml-1">
               {{ new Date(info.date).toLocaleDateString('sv-SE') }}

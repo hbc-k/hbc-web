@@ -18,19 +18,18 @@ const { data: blogPosts } = await useAsyncData('posts', () =>
 </script>
 
 <template>
-  <section class="pointer-events-none bg-[url('/assets/img/building.webp')] bg-cover shadow-md">
-    <div class="bg-black bg-opacity-40 backdrop-blur">
-      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-8">
-        <div class="text-center text-white md:flex">
-          <h1 class="text-5xl font-bold leading-snug md:text-left md:text-6xl md:leading-snug">Blog</h1>
-          <p class="mt-auto ml-auto pt-4 md:text-right md:text-base">部員が活動の様子をお届け！</p>
+  <PageHeader to="/blog">
+    Blog
+    <template #detail>部員が活動の様子をお届け！</template>
+  </PageHeader>
+  <main>
+    <div class="mx-auto max-w-7xl">
+      <div class="my-8 px-4 sm:px-6 lg:px-8">
+        <div class="mb-4 text-xl font-bold">すべての記事 ― {{ blogPosts?.length }} 件</div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <BlogCard v-for="article in blogPosts" :key="article.title" :article="article" />
         </div>
       </div>
     </div>
-  </section>
-  <section class="mx-auto max-w-7xl px-4 py-10 md:px-8">
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      <BlogCard v-for="article in blogPosts" :article="article" />
-    </div>
-  </section>
+  </main>
 </template>
