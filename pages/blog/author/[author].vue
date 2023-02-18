@@ -11,7 +11,11 @@ interface BlogPost extends ParsedContent {
   updateDate: string;
 }
 const { data: blogPosts } = await useAsyncData(`${route.params.author.toString()}Posts`, () =>
-  queryContent<BlogPost>('blog', 'posts').where({ author: route.params.author.toString() }).sort({ createDate: -1 }).find()
+  queryContent<BlogPost>('blog', 'posts')
+    .only(['_path', 'title', 'description', 'author', 'category', 'coverImage', 'createDate'])
+    .where({ author: route.params.author.toString() })
+    .sort({ createDate: -1 })
+    .find()
 );
 
 interface Author extends ParsedContent {
