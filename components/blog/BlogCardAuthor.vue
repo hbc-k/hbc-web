@@ -32,12 +32,11 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
           v-if="authorData && authorData.displayName"
           :to="`/blog/author/${author}`"
           class="mr-1 font-bold text-black transition duration-300 hover:underline group-hover:text-red-600"
+          >{{ authorData.displayName }}</NuxtLink
         >
-          {{ authorData.displayName }}
-        </NuxtLink>
-        <NuxtLink :to="`/blog/author/${author}`" class="text-gray-500 transition duration-300 hover:underline group-hover:text-red-400">
-          @{{ author }}
-        </NuxtLink>
+        <NuxtLink :to="`/blog/author/${author}`" class="text-gray-500 transition duration-300 hover:underline group-hover:text-red-400"
+          >@{{ author }}</NuxtLink
+        >
       </div>
       <div class="text-gray-500 transition duration-300 group-hover:text-red-400">
         <font-awesome-icon icon="fa-regular fa-clock" />
