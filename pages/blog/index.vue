@@ -13,7 +13,6 @@ const { data: blogPosts } = await useAsyncData('posts', () =>
   queryContent<BlogPost>('blog', 'posts')
     .only(['_path', 'title', 'description', 'author', 'category', 'coverImage', 'createDate'])
     .sort({ createDate: -1 })
-    .limit(3)
     .find()
 );
 </script>
