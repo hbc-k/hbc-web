@@ -22,7 +22,7 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
 </script>
 
 <template>
-  <aside class="mx-auto my-8 px-4 py-8 sm:px-8">
+  <aside class="px-4 py-8 sm:px-8">
     <div>
       <h1 class="mb-4 font-bold">この記事を書いた人</h1>
       <div class="flex">
