@@ -12,6 +12,7 @@ const Props = withDefaults(defineProps<Props>(), {
 });
 
 interface Author extends ParsedContent {
+  userName?: string;
   displayName?: string;
   icon?: string;
   bio?: string;
@@ -24,7 +25,7 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
 <template>
   <div class="flex items-center">
     <NuxtLink :to="`/blog/author/${author}`" class="aspect-square h-9 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover">
-      <img v-if="authorData && authorData.icon" :src="`/img/blog/author/${authorData.icon}`" alt="" class="transition hover:brightness-90" />
+      <img v-if="authorData && authorData.icon" :src="`/img/blog/author/${authorData.icon}`" alt="" class="hover:brightness-90" />
     </NuxtLink>
     <div class="ml-2 overflow-hidden text-sm">
       <div class="truncate">
