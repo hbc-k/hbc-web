@@ -41,6 +41,9 @@
         <ContentRenderer :value="doc" />
       </main>
     </article>
-    <ArticleAuthorCard :author="doc.author" class="max-w-3xl rounded-md bg-white shadow" />
+    <ArticleAuthorCard :author="doc.author" class="mx-auto my-8 max-w-3xl rounded-md bg-white shadow" />
+    <div class="mx-4">
+      <ArticleSurround :path="$route.path" class="mx-auto my-8 max-w-3xl" />
+    </div>
   </ContentDoc>
 </template>
