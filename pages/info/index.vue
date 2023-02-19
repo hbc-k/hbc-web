@@ -5,22 +5,21 @@ interface Info extends ParsedContent {
   category: string;
   url: string;
   newTab?: boolean;
-  date: string;
+  createDate: string;
+  expireDate: string;
   pin?: boolean;
 }
-const { data: pinnedInfos } = await useAsyncData('pinnedInfos', () => queryContent<Info>('info').where({ pin: true }).sort({ date: -1 }).find());
 
-interface Info extends ParsedContent {
-  category: string;
-  url: string;
-  newTab?: boolean;
-  date: string;
-  pin?: boolean;
-}
-const { data: archivedInfos } = await useAsyncData('archivedInfos', () =>
+const { data: validInfos } = await useAsyncData('validInfos', () =>
   queryContent<Info>('info')
-    .where({ pin: { $ne: true } })
-    .sort({ date: -1 })
+    .where({ expireDate: { $gte: new Date().valueOf() } })
+    .sort({ createDate: -1 })
+    .find()
+);
+const { data: expiredInfos } = await useAsyncData('expiredInfos', () =>
+  queryContent<Info>('info')
+    .where({ expireDate: { $lt: new Date().valueOf() } })
+    .sort({ createDate: -1 })
     .find()
 );
 </script>
@@ -41,7 +40,7 @@ const { data: archivedInfos } = await useAsyncData('archivedInfos', () =>
             </div>
           </div>
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <InfoCard v-for="info in pinnedInfos" :key="info.title" :info="info" />
+            <InfoCard v-for="info in validInfos" :key="info.title" :info="info" />
           </div>
         </div>
       </div>
@@ -57,7 +56,7 @@ const { data: archivedInfos } = await useAsyncData('archivedInfos', () =>
             </div>
           </div>
           <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <InfoCard v-for="info in archivedInfos" :key="info.title" :info="info" />
+            <InfoCard v-for="info in expiredInfos" :key="info.title" :info="info" />
           </div>
         </div>
       </div>
