@@ -55,5 +55,15 @@
         <ArticleSurround :path="$route.path" class="my-8" />
       </div>
     </div>
+    <div class="mx-4">
+      <div class="mx-auto max-w-3xl">
+        <NuxtLink
+          to="/blog"
+          class="my-8 flex h-16 items-center justify-center rounded-md border bg-white px-4 py-2 text-sm font-bold text-gray-800 shadow transition duration-300 hover:bg-gray-200 hover:text-red-600"
+        >
+          <span>記事一覧へ戻る</span>
+        </NuxtLink>
+      </div>
+    </div>
   </ContentDoc>
 </template>
