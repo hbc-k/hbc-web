@@ -22,6 +22,9 @@ const Props = defineProps<Props>();
       <NuxtPicture
         v-if="doc.coverImage"
         :src="doc.coverImage"
+        width="1200"
+        height="630"
+        quality="75"
         loading="lazy"
         :imgAttrs="{ class: 'transition duration-500 group-hover:scale-[103%]' }"
       />

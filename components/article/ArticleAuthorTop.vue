@@ -31,6 +31,7 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
         v-if="authorData && authorData.icon"
         :src="`/img/blog/author/${authorData.icon}`"
         sizes="sm:144px lg:192px"
+        quality="75"
         loading="lazy"
         :imgAttrs="{ class: 'hover:brightness-90' }"
       />

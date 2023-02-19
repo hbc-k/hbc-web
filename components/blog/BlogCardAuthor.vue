@@ -33,6 +33,7 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
         :src="`/img/blog/author/${authorData.icon}`"
         width="108px"
         height="108px"
+        quality="75"
         loading="lazy"
         :imgAttrs="{ class: 'hover:brightness-90' }"
       />

@@ -44,6 +44,7 @@ const { data: authorData } = await useAsyncData(route.params.author.toString(), 
                 v-if="authorData && authorData.icon"
                 :src="`/img/blog/author/${authorData.icon}`"
                 sizes="sm:144px lg:192px"
+                quality="75"
                 loading="lazy"
               />
             </div>
