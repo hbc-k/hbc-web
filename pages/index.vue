@@ -33,7 +33,7 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
       <div class="mx-auto max-w-7xl">
         <div class="py-8 px-4 sm:px-6 lg:px-8">
           <div class="text-center text-white md:flex md:items-end md:justify-between">
-            <h1 class="text-5xl font-bold leading-snug md:text-left md:text-6xl md:leading-snug">Hiroshima<br />Broadcasting<br />Club</h1>
+            <h1 class="text-5xl leading-snug md:text-left md:text-6xl md:leading-snug">Hiroshima<br />Broadcasting<br />Club</h1>
             <p class="mt-4 md:text-right">広島県立広島中学校・広島高等学校 放送部<br />公式Webサイト「HBC Web」へようこそ！</p>
           </div>
         </div>
