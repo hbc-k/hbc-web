@@ -15,10 +15,10 @@ const Props = defineProps<Props>();
 
 <template>
   <article
-    class="group relative block h-full overflow-hidden rounded-lg border bg-white shadow transition duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:text-red-600 hover:shadow-md"
+    class="group relative h-full overflow-hidden rounded-lg border bg-white shadow transition duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:text-red-600 hover:shadow-md"
   >
     <NuxtLink :to="doc._path" class="absolute inset-0" tabindex="-1" />
-    <div class="pointer-events-none aspect-[1200_/_630] h-auto w-full overflow-hidden bg-gray-200 object-cover">
+    <div class="pointer-events-none flex aspect-[1200_/_630] h-auto w-full items-center overflow-hidden bg-gray-200">
       <NuxtPicture
         v-if="doc.coverImage"
         :src="doc.coverImage"

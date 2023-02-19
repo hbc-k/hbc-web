@@ -39,7 +39,7 @@ const { data: authorData } = await useAsyncData(route.params.author.toString(), 
       <div class="mx-auto max-w-7xl">
         <div class="px-4 py-8 sm:px-6 lg:px-8">
           <div class="flex">
-            <div class="aspect-square h-12 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover sm:h-16">
+            <div class="flex aspect-square h-12 w-auto flex-shrink-0 items-center overflow-hidden rounded-full bg-gray-200 sm:h-16">
               <NuxtPicture
                 v-if="authorData && authorData.icon"
                 :src="`/img/blog/author/${authorData.icon}`"

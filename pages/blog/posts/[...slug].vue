@@ -6,7 +6,7 @@
   <ContentDoc v-slot="{ doc }">
     <div class="mx-auto max-w-3xl">
       <article class="my-8 rounded-md bg-white p-4 py-8 shadow sm:px-8">
-        <div class="mb-6 aspect-[1200_/_630] h-auto w-full overflow-hidden rounded-md bg-gray-200 object-cover">
+        <div class="mb-6 flex aspect-[1200_/_630] h-auto w-full items-center overflow-hidden rounded-md bg-gray-200">
           <NuxtPicture :src="doc.coverImage" loading="lazy" />
         </div>
         <div class="mb-6 border-b border-b-gray-300 pb-6">

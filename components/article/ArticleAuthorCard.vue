@@ -27,7 +27,7 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
     <div class="flex">
       <NuxtLink
         :to="`/blog/author/${author}`"
-        class="aspect-square h-12 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover sm:h-16"
+        class="flex aspect-square h-12 w-auto flex-shrink-0 items-center overflow-hidden rounded-full bg-gray-200 sm:h-16"
       >
         <NuxtPicture
           v-if="authorData && authorData.icon"
