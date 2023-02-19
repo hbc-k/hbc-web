@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxt/image-edge'],
   content: {
     // https://content.nuxtjs.org/api/configuration
   },
