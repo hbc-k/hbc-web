@@ -17,7 +17,12 @@ interface Info extends ParsedContent {
   date: string;
   pin?: boolean;
 }
-const { data: archivedInfos } = await useAsyncData('archivedInfos', () => queryContent<Info>('info').where({ pin: false }).sort({ date: -1 }).find());
+const { data: archivedInfos } = await useAsyncData('archivedInfos', () =>
+  queryContent<Info>('info')
+    .where({ pin: { $ne: true } })
+    .sort({ date: -1 })
+    .find()
+);
 </script>
 
 <template>
