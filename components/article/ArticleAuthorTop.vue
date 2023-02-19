@@ -24,7 +24,13 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
 <template>
   <div class="flex items-center text-sm">
     <NuxtLink :to="`/blog/author/${author}`" class="aspect-square h-6 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover">
-      <img v-if="authorData && authorData.icon" :src="`/img/blog/author/${authorData.icon}`" alt="" class="hover:brightness-90" />
+      <NuxtPicture
+        v-if="authorData && authorData.icon"
+        :src="`/img/blog/author/${authorData.icon}`"
+        sizes="sm:144px lg:192px"
+        loading="lazy"
+        :imgAttrs="{ class: 'hover:brightness-90' }"
+      />
     </NuxtLink>
     <div class="ml-2 text-sm">
       <NuxtLink v-if="authorData && authorData.displayName" :to="`/blog/author/${author}`" class="mr-1 font-bold text-black hover:underline">{{

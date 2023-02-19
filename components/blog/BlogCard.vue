@@ -18,8 +18,13 @@ const Props = defineProps<Props>();
     class="group relative block h-full overflow-hidden rounded-lg border bg-white shadow transition duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:text-red-600 hover:shadow-md"
   >
     <NuxtLink :to="doc._path" class="absolute inset-0" tabindex="-1" />
-    <div class="pointer-events-none block aspect-[1200_/_630] h-auto w-full overflow-hidden object-cover">
-      <img v-if="doc.coverImage" :src="`/img/blog/posts/${doc.coverImage}`" alt="" class="transition duration-500 group-hover:scale-[103%]" />
+    <div class="pointer-events-none aspect-[1200_/_630] h-auto w-full overflow-hidden bg-gray-200 object-cover">
+      <NuxtPicture
+        v-if="doc.coverImage"
+        :src="`/img/blog/posts/${doc.coverImage}`"
+        loading="lazy"
+        :imgAttrs="{ class: 'transition duration-500 group-hover:scale-[103%]' }"
+      />
     </div>
     <div class="p-5">
       <div class="mb-3">

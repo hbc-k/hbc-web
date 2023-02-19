@@ -6,7 +6,9 @@
   <ContentDoc v-slot="{ doc }">
     <div class="mx-auto max-w-3xl">
       <article class="my-8 rounded-md bg-white p-4 py-8 shadow sm:px-8">
-        <img :src="`/img/blog/posts/${doc.coverImage}`" alt="" class="mb-6 rounded-md" />
+        <div class="mb-6 aspect-[1200_/_630] h-auto w-full overflow-hidden rounded-md bg-gray-200 object-cover">
+          <NuxtPicture :src="`/img/blog/posts/${doc.coverImage}`" loading="lazy" />
+        </div>
         <div class="mb-6 border-b border-b-gray-300 pb-6">
           <ArticleAuthorTop :author="doc.author" class="mb-4" />
           <div class="mb-3 items-center text-sm text-gray-500">

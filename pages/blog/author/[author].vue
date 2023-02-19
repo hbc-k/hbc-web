@@ -40,7 +40,12 @@ const { data: authorData } = await useAsyncData(route.params.author.toString(), 
         <div class="px-4 py-8 sm:px-6 lg:px-8">
           <div class="flex">
             <div class="aspect-square h-12 w-auto flex-shrink-0 overflow-hidden rounded-full bg-gray-200 object-cover sm:h-16">
-              <img v-if="authorData && authorData.icon" :src="`/img/blog/author/${authorData.icon}`" alt="" />
+              <NuxtPicture
+                v-if="authorData && authorData.icon"
+                :src="`/img/blog/author/${authorData.icon}`"
+                sizes="sm:144px lg:192px"
+                loading="lazy"
+              />
             </div>
             <div class="ml-4">
               <div class="text-lg">
