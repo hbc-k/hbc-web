@@ -5,17 +5,11 @@ interface Info extends ParsedContent {
   category: string;
   url: string;
   newTab?: boolean;
-  createDate: string;
-  expireDate: string;
+  date: string;
   pin?: boolean;
 }
 
-const { data: validInfos } = await useAsyncData('validInfos', () =>
-  queryContent<Info>('info')
-    .where({ expireDate: { $gte: new Date().valueOf() } })
-    .sort({ createDate: -1 })
-    .find()
-);
+const { data: pinnedInfos } = await useAsyncData('pinnedInfos', () => queryContent<Info>('info').where({ pin: true }).sort({ date: -1 }).find());
 
 interface BlogPost extends ParsedContent {
   author: string;
@@ -58,7 +52,7 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
           </div>
         </div>
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <InfoCard v-for="info in validInfos" :key="info.title" :info="info" />
+          <InfoCard v-for="info in pinnedInfos" :key="info.title" :info="info" />
         </div>
         <div class="mt-10 text-center">
           <ButtonLinkArrowRight to="/info">過去のお知らせを見る</ButtonLinkArrowRight>
