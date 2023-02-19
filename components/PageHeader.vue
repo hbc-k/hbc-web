@@ -9,10 +9,10 @@ const Props = defineProps<Props>();
   <header class="pointer-events-none bg-[url('/assets/img/building.webp')] bg-cover shadow-md">
     <div class="pointer-events-auto bg-black bg-opacity-40 backdrop-blur">
       <div class="mx-auto max-w-7xl">
-        <div class="flex items-end justify-between p-4 text-white sm:px-6 lg:px-8">
-          <NuxtLink v-if="to != $route.path" :to="to" class="text-5xl uppercase hover:underline"><slot /></NuxtLink>
-          <div v-else class="text-5xl uppercase"><slot /></div>
-          <p class="text-right"><slot name="detail" /></p>
+        <div class="items-end justify-between p-4 text-center text-white sm:flex sm:px-6 lg:px-8">
+          <NuxtLink v-if="to != $route.path" :to="to" class="text-4xl uppercase hover:underline sm:text-left sm:text-5xl"><slot /></NuxtLink>
+          <div v-else class="text-4xl uppercase sm:text-left sm:text-5xl"><slot /></div>
+          <p class="mt-3 sm:mt-0 sm:text-right"><slot name="detail" /></p>
         </div>
       </div>
     </div>

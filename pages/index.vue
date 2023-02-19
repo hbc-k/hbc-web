@@ -8,7 +8,7 @@ interface Info extends ParsedContent {
   date: string;
   pin?: boolean;
 }
-const { data: pinnedInfos } = await useAsyncData('info', () => queryContent<Info>('info').where({ pin: true }).sort({ date: -1 }).find());
+const { data: pinnedInfos } = await useAsyncData('pinnedInfos', () => queryContent<Info>('info').where({ pin: true }).sort({ date: -1 }).find());
 
 interface BlogPost extends ParsedContent {
   author: string;
@@ -34,7 +34,7 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
         <div class="py-8 px-4 sm:px-6 lg:px-8">
           <div class="text-center text-white md:flex md:items-end md:justify-between">
             <h1 class="text-5xl leading-snug md:text-left md:text-6xl md:leading-snug">Hiroshima<br />Broadcasting<br />Club</h1>
-            <p class="mt-4 md:text-right">広島県立広島中学校・広島高等学校 放送部<br />公式Webサイト「HBC Web」へようこそ！</p>
+            <p class="mt-4 md:mt-0 md:text-right">広島県立広島中学校・広島高等学校 放送部<br />公式Webサイト「HBC Web」へようこそ！</p>
           </div>
         </div>
       </div>
