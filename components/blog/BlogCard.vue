@@ -21,7 +21,7 @@ const Props = defineProps<Props>();
     <div class="pointer-events-none aspect-[1200_/_630] h-auto w-full overflow-hidden bg-gray-200 object-cover">
       <NuxtPicture
         v-if="doc.coverImage"
-        :src="`/img/blog/posts/${doc.coverImage}`"
+        :src="doc.coverImage"
         loading="lazy"
         :imgAttrs="{ class: 'transition duration-500 group-hover:scale-[103%]' }"
       />
