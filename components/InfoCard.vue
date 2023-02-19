@@ -13,11 +13,10 @@ const Props = defineProps<Props>();
 </script>
 
 <template>
-  <NuxtLink
-    :to="info.url"
-    :target="info.newTab ? '_blank' : '_self'"
-    class="group relative flex h-full flex-col rounded-lg border bg-white shadow transition duration-300 hover:-translate-y-1 hover:border-red-200 hover:text-red-600 hover:shadow-md"
+  <article
+    class="group relative flex h-full flex-col rounded-lg border bg-white shadow transition duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:text-red-600 hover:shadow-md"
   >
+    <NuxtLink :to="info.url" :target="info.newTab ? '_blank' : '_self'" class="absolute inset-0" tabindex="-1" />
     <div class="p-5">
       <div class="mb-3 text-sm">
         <div class="flex items-center justify-between">
@@ -33,9 +32,9 @@ const Props = defineProps<Props>();
         </div>
       </div>
       <div>
-        <h2 class="text-xl font-bold">
+        <NuxtLink :to="info.url" :target="info.newTab ? '_blank' : '_self'" class="relative z-10 text-xl font-bold hover:underline">
           {{ info.title }}
-        </h2>
+        </NuxtLink>
         <p class="mt-2 text-gray-500 transition duration-300 group-hover:text-red-400">
           {{ info.description }}
           <span v-if="info.newTab" class="ml-1 text-xs">
@@ -44,5 +43,5 @@ const Props = defineProps<Props>();
         </p>
       </div>
     </div>
-  </NuxtLink>
+  </article>
 </template>

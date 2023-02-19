@@ -27,7 +27,7 @@ const { data: blogPosts } = await useAsyncData('posts', () =>
       <div class="my-8 px-4 sm:px-6 lg:px-8">
         <div class="mb-4 text-xl font-bold">すべての記事 ― {{ blogPosts?.length }} 件</div>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <BlogCard v-for="article in blogPosts" :key="article.title" :article="article" />
+          <BlogCard v-for="article in blogPosts" :key="article.title" :doc="article" />
         </div>
       </div>
     </div>

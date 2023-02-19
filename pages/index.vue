@@ -42,7 +42,7 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
   </header>
   <section>
     <div class="mx-auto max-w-7xl">
-      <div class="px-4 pt-10 pb-14 sm:px-6 lg:px-8">
+      <div class="px-4 py-10 sm:px-6 lg:px-8">
         <div class="mb-8 text-gray-800">
           <div class="items-center text-center">
             <span class="relative bottom-0.5 mr-4 text-2xl"><font-awesome-icon icon="fa-solid fa-bullhorn" /></span>
@@ -52,6 +52,9 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
         </div>
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <InfoCard v-for="info in pinnedInfos" :key="info.title" :info="info" />
+        </div>
+        <div class="mt-10 text-center">
+          <ButtonLinkArrowRight to="/info">過去のお知らせを見る</ButtonLinkArrowRight>
         </div>
       </div>
     </div>
@@ -93,7 +96,7 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
           </div>
         </div>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <BlogCard v-for="article in blogPosts" :key="article.title" :article="article" />
+          <BlogCard v-for="doc in blogPosts" :key="doc.title" :doc="doc" />
         </div>
         <div class="mt-8 text-center">
           <ButtonLinkArrowRight to="/blog">もっと見る</ButtonLinkArrowRight>
