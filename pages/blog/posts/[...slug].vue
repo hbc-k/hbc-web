@@ -45,10 +45,8 @@
         </main>
       </article>
     </div>
-    <div>
-      <div class="mx-auto max-w-3xl">
-        <ArticleAuthorCard :author="doc.author" class="my-8 rounded-md bg-white p-4 py-8 shadow sm:px-8" />
-      </div>
+    <div class="mx-auto max-w-3xl">
+      <ArticleAuthorCard :author="doc.author" class="my-8 rounded-md bg-white p-4 py-8 shadow sm:px-8" />
     </div>
     <div class="mx-4">
       <div class="mx-auto max-w-3xl">
