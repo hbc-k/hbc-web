@@ -9,7 +9,11 @@ module.exports = {
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['YakuHanJP', 'Inter', 'BIZ UDPGothic', 'sans-serif'],
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };
