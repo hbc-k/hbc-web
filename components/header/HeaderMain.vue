@@ -10,11 +10,11 @@ const links: { name: string; to: string }[] = [
 </script>
 
 <template>
-  <div class="bg-red-700 bg-opacity-95 text-white shadow-md backdrop-blur">
+  <div class="bg-red-600/75 fill-white text-white backdrop-blur">
     <div class="mx-auto max-w-7xl">
       <div class="flex items-center justify-between p-4 sm:px-6 lg:px-8">
         <NuxtLink to="/" class="flex items-center">
-          <TheLogo class="mr-2 h-7 w-auto shrink-0 fill-white" />
+          <TheLogo class="mr-2 h-7 w-auto shrink-0 fill-inherit" />
           <div class="text-[0.7rem] leading-tight sm:block">
             <p>県広放送部</p>
             <p>公式Webサイト「HBC Web」</p>
