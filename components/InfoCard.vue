@@ -32,10 +32,10 @@ const Props = defineProps<Props>();
         </div>
       </div>
       <div>
-        <NuxtLink :to="info.url" :target="info.newTab ? '_blank' : '_self'" class="relative z-10 text-xl font-bold hover:underline">
+        <NuxtLink :to="info.url" :target="info.newTab ? '_blank' : '_self'" class="relative z-10 text-lg font-bold hover:underline">
           {{ info.title }}
         </NuxtLink>
-        <p class="mt-2 text-gray-500 transition duration-300 group-hover:text-red-400">
+        <p class="mt-2 text-sm text-gray-500 transition duration-300 group-hover:text-red-400">
           {{ info.description }}
           <span v-if="info.newTab" class="ml-1 text-xs">
             <font-awesome-icon icon="fa-solid fa-arrow-up-right-from-square" />
