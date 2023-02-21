@@ -1,5 +1,5 @@
 <template>
-  <div class="flex min-h-screen flex-col">
+  <div class="flex min-h-screen flex-col overflow-hidden">
     <header class="fixed top-0 z-40 w-full">
       <HeaderMain />
     </header>
