@@ -10,7 +10,7 @@ const links: { name: string; to: string }[] = [
 </script>
 
 <template>
-  <div class="bg-red-600/75 fill-white text-white backdrop-blur">
+  <div class="fill-white text-white">
     <div class="mx-auto max-w-7xl">
       <div class="flex items-center justify-between p-4 sm:px-6 lg:px-8">
         <NuxtLink to="/" class="flex items-center">
