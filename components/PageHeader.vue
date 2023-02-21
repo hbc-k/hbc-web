@@ -3,10 +3,25 @@ interface Props {
   to: string;
 }
 const Props = defineProps<Props>();
+
+const onScroll = inject<{ (value: boolean): void }>('onScroll');
+const firstContent = ref<HTMLElement>();
+
+onMounted(() => {
+  if (!firstContent.value) return;
+  if (!onScroll) return;
+  const handler = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      onScroll(!entry.isIntersecting);
+    });
+  };
+  const observer = new IntersectionObserver(handler, { rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(firstContent.value);
+});
 </script>
 
 <template>
-  <header class="pointer-events-none bg-[url('/assets/img/building.webp')] bg-cover shadow-md">
+  <header ref="firstContent" class="pointer-events-none bg-[url('/assets/img/building.webp')] bg-cover shadow-md">
     <div class="pointer-events-auto bg-black bg-opacity-40 backdrop-blur">
       <div class="mx-auto max-w-7xl pt-[60px]">
         <div class="items-end justify-between py-6 text-center text-white sm:flex sm:px-6 lg:px-8">

@@ -26,10 +26,25 @@ const { data: blogPosts } = await useAsyncData('recentPosts', () =>
     .limit(3)
     .find()
 );
+
+const onScroll = inject<{ (value: boolean): void }>('onScroll');
+const firstContent = ref<HTMLElement>();
+
+onMounted(() => {
+  if (!firstContent.value) return;
+  if (!onScroll) return;
+  const handler = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      onScroll(!entry.isIntersecting);
+    });
+  };
+  const observer = new IntersectionObserver(handler, { rootMargin: '-60px 0px 0px 0px' });
+  observer.observe(firstContent.value);
+});
 </script>
 
 <template>
-  <header ref="firstContent" class="">
+  <header ref="firstContent">
     <div class="relative">
       <video src="/img/index_key.mp4" type="video/mp4" autoplay loop muted playsinline class="h-[60vh] w-screen object-cover sm:h-screen"></video>
       <div class="absolute top-0 w-full">

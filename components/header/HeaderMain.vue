@@ -1,4 +1,10 @@
 <script setup lang="ts">
+interface Props {
+  scroll?: boolean;
+}
+
+const Props = defineProps<Props>();
+
 const links: { name: string; to: string }[] = [
   { name: 'Home', to: '/' },
   { name: 'About', to: '/about' },
@@ -10,8 +16,21 @@ const links: { name: string; to: string }[] = [
 </script>
 
 <template>
-  <div class="fill-white text-white">
-    <div class="mx-auto max-w-7xl">
+  <div
+    v-bind:class="{
+      'text-white fill-white': !scroll,
+      'text-black fill-black': scroll,
+    }"
+    class="transition"
+  >
+    <div
+      v-bind:class="{
+        'opacity-100': scroll,
+        'opacity-0': !scroll,
+      }"
+      class="absolute inset-0 -z-10 bg-white bg-opacity-50 backdrop-blur transition-opacity"
+    ></div>
+    <div class="mx-auto max-w-7xl opacity-100">
       <div class="flex items-center justify-between p-4 sm:px-6 lg:px-8">
         <NuxtLink to="/" class="flex items-center">
           <TheLogo class="mr-2 h-7 w-auto shrink-0 fill-inherit" />
@@ -23,7 +42,7 @@ const links: { name: string; to: string }[] = [
         <nav class="hidden md:block">
           <ul>
             <li v-for="link in links" :key="link.name" class="ml-4 inline-block">
-              <HeaderLink :to="link.to">{{ link.name }}</HeaderLink>
+              <HeaderLink :to="link.to" :scroll="scroll">{{ link.name }}</HeaderLink>
             </li>
           </ul>
         </nav>
