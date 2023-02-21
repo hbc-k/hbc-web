@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['YakuHanJP', 'Inter', 'BIZ UDPGothic', 'sans-serif'],
+        sans: ['YakuHanJP', 'Inter', 'IBM Plex Sans JP', 'sans-serif'],
       },
     },
   },
