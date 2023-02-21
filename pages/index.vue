@@ -44,21 +44,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <header ref="firstContent">
-    <div class="relative">
-      <video src="/img/index_key.mp4" type="video/mp4" autoplay loop muted playsinline class="h-[60vh] w-screen object-cover sm:h-screen"></video>
-      <div class="absolute top-0 w-full">
-        <div class="mx-auto max-w-7xl">
-          <div class="flex h-[60vh] flex-col items-center justify-center pt-[60px] sm:h-screen md:items-start">
-            <div class="px-4 text-black sm:px-6 lg:px-8">
-              <h1 class="text-[2.5rem] font-light uppercase leading-snug sm:text-7xl sm:leading-snug">
-                <span class="bg-white px-3">Hiroshima<br /></span><span class="bg-white px-3">Broadcasting<br /></span
-                ><span class="bg-white px-3">Club</span>
-              </h1>
-              <p class="mt-10 sm:text-[1.7rem]">
-                <span class="bg-white px-2 py-1">広島県立広島中学校・広島高等学校 放送部</span>
-              </p>
-            </div>
+  <header ref="firstContent" class="relative bg-black">
+    <video src="/img/index_key.mp4" type="video/mp4" autoplay loop muted playsinline class="h-[60vh] w-screen object-cover sm:h-screen"></video>
+    <div class="absolute top-0 w-full">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex h-[60vh] flex-col items-center justify-center pt-[60px] sm:h-screen md:items-start">
+          <div class="px-4 text-black sm:px-6 lg:px-8">
+            <h1 class="text-[2.5rem] font-light uppercase leading-snug sm:text-7xl sm:leading-snug">
+              <span class="bg-white px-3">Hiroshima<br /></span><span class="bg-white px-3">Broadcasting<br /></span
+              ><span class="bg-white px-3">Club</span>
+            </h1>
+            <p class="mt-10 sm:text-[1.7rem]">
+              <span class="bg-white px-2 py-1">広島県立広島中学校・広島高等学校 放送部</span>
+            </p>
           </div>
         </div>
       </div>
