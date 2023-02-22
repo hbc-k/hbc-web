@@ -19,7 +19,7 @@ const links: { name: string; to: string }[] = [
   <div
     v-bind:class="{
       'text-white fill-white': !scroll,
-      'text-black fill-black': scroll,
+      'text-gray-900 fill-gray-900': scroll,
     }"
     class="transition"
   >
@@ -28,7 +28,7 @@ const links: { name: string; to: string }[] = [
         'opacity-100': scroll,
         'opacity-0': !scroll,
       }"
-      class="absolute inset-0 -z-10 bg-white bg-opacity-50 backdrop-blur transition-opacity"
+      class="absolute inset-0 -z-10 border-b bg-white bg-opacity-50 backdrop-blur transition-opacity"
     ></div>
     <div class="mx-auto max-w-7xl opacity-100">
       <div class="flex items-center justify-between p-4 sm:px-6 lg:px-8">

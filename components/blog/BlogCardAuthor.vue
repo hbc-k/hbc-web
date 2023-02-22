@@ -43,7 +43,7 @@ const { data: authorData } = await useAsyncData(Props.author, () =>
         <NuxtLink
           v-if="authorData && authorData.displayName"
           :to="`/blog/author/${author}`"
-          class="relative z-10 mr-1 font-bold text-black transition duration-300 hover:underline group-hover:text-red-600"
+          class="relative z-10 mr-1 font-bold text-gray-900 transition duration-300 hover:underline group-hover:text-red-600"
           >{{ authorData.displayName }}</NuxtLink
         >
         <NuxtLink :to="`/blog/author/${author}`" class="relative z-10 text-gray-500 transition duration-300 hover:underline group-hover:text-red-400"

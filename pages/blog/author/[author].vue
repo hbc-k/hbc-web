@@ -50,7 +50,7 @@ const { data: authorData } = await useAsyncData(route.params.author.toString(), 
             </div>
             <div class="ml-4">
               <div class="text-lg">
-                <div v-if="authorData && authorData.displayName" class="mr-1 block font-bold text-black">{{ authorData.displayName }}</div>
+                <div v-if="authorData && authorData.displayName" class="mr-1 block font-bold">{{ authorData.displayName }}</div>
                 <div class="block font-bold text-gray-500">@{{ $route.params.author.toString() }}</div>
               </div>
               <p class="mt-2">{{ authorData?.bio }}</p>

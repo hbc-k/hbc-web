@@ -15,7 +15,7 @@ const Props = defineProps<Props>();
         ($route.path !== '/' && to === '/') || !$route.path.startsWith(to),
       'pointer-events-none': $route.path === to,
       'before:bg-white': !scroll,
-      'before:bg-black': scroll,
+      'before:bg-gray-900': scroll,
     }"
     class="relative inline-block uppercase before:absolute before:bottom-[-1px] before:left-[-1px] before:z-[100] before:h-[1px] before:w-[calc(100%_+_2px)] before:transition before:duration-200 before:content-['']"
   >

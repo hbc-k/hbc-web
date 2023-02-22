@@ -9,7 +9,7 @@ provide('onScroll', onScroll);
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col overflow-hidden">
+  <div class="flex min-h-screen flex-col overflow-hidden text-gray-900">
     <header class="fixed top-0 z-40 w-full">
       <HeaderMain :scroll="scroll" />
     </header>
