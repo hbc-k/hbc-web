@@ -45,7 +45,7 @@ onMounted(() => {
 
 <template>
   <header ref="firstContent" class="relative bg-black">
-    <video src="/img/index_key.mp4" type="video/mp4" autoplay loop muted playsinline class="h-[120vw] w-screen object-cover sm:h-screen"></video>
+    <video src="/img/index_header.mp4" type="video/mp4" autoplay loop muted playsinline class="h-[120vw] w-screen object-cover sm:h-screen"></video>
     <div class="absolute top-0 w-full">
       <div class="mx-auto max-w-7xl">
         <div class="flex h-[120vw] flex-col items-center justify-center sm:h-screen sm:items-start">
