@@ -2,13 +2,29 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 const route = useRoute();
 
+useSeoMeta({
+  titleTemplate: '%s | HBC Web - Blog',
+  title: () => {
+    return `タグに ${route.params.tag.toString()} を含む記事`;
+  },
+  description: () => {
+    return `タグに ${route.params.tag.toString()} を含む記事です。`;
+  },
+  ogTitle: () => {
+    return `タグに ${route.params.tag.toString()} を含む記事`;
+  },
+  ogDescription: () => {
+    return `タグに ${route.params.tag.toString()} を含む記事です。`;
+  },
+});
+
 interface BlogPost extends ParsedContent {
-  author: string;
-  category: string;
-  tags: string[];
-  coverImage: string;
-  createDate: string;
-  updateDate: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+  coverImage?: string;
+  createDate?: string;
+  updateDate?: string;
 }
 const { data: blogPosts } = await useAsyncData(`${route.params.tag.toString()}Posts`, () =>
   queryContent<BlogPost>('blog', 'posts')

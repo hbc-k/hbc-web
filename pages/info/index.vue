@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
+useSeoMeta({
+  title: 'Information',
+  description: '放送部からのお知らせを掲載しています。',
+  ogTitle: 'Information',
+  ogDescription: '放送部からのお知らせを掲載しています。',
+});
+
 interface Info extends ParsedContent {
   category: string;
   url: string;

@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
+useSeoMeta({
+  ogTitle: 'Blog',
+  ogDescription: '放送部の活動の様子を紹介しています。',
+});
+
 interface BlogPost extends ParsedContent {
-  author: string;
-  category: string;
-  tags: string[];
-  coverImage: string;
-  createDate: string;
-  updateDate: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+  coverImage?: string;
+  createDate?: string;
+  updateDate?: string;
 }
 const { data: blogPosts } = await useAsyncData('posts', () =>
   queryContent<BlogPost>('blog', 'posts')
@@ -18,6 +23,10 @@ const { data: blogPosts } = await useAsyncData('posts', () =>
 </script>
 
 <template>
+  <Head>
+    <Title>Blog</Title>
+    <Meta name="description" content="放送部の活動の様子を紹介しています。" />
+  </Head>
   <PageHeader to="/blog">
     Blog
     <template #detail>部員が活動の様子をお届け！</template>

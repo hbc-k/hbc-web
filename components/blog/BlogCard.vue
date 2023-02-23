@@ -28,6 +28,7 @@ const Props = defineProps<Props>();
         loading="lazy"
         :imgAttrs="{ class: 'transition duration-500 group-hover:scale-[103%]' }"
       />
+      <img v-else src="/img/ogp_default.webp" class="transition duration-500 group-hover:scale-[103%]" />
     </div>
     <div class="p-5">
       <div class="mb-3">

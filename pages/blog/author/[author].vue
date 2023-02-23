@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+
 const route = useRoute();
 
 interface BlogPost extends ParsedContent {
-  author: string;
-  category: string;
-  tags: string[];
-  coverImage: string;
-  createDate: string;
-  updateDate: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+  coverImage?: string;
+  createDate?: string;
+  updateDate?: string;
 }
 const { data: blogPosts } = await useAsyncData(`${route.params.author.toString()}Posts`, () =>
   queryContent<BlogPost>('blog', 'posts')
@@ -27,6 +28,22 @@ interface Author extends ParsedContent {
 const { data: authorData } = await useAsyncData(route.params.author.toString(), () =>
   queryContent<Author>('blog', 'author').where({ userName: route.params.author.toString() }).findOne()
 );
+
+useSeoMeta({
+  titleTemplate: '%s | HBC Web - Blog',
+  title: () => {
+    return `${authorData.value?.displayName} さんの記事`;
+  },
+  description: () => {
+    return `${authorData.value?.displayName} さんの記事です。`;
+  },
+  ogTitle: () => {
+    return `${authorData.value?.displayName} さんの記事`;
+  },
+  ogDescription: () => {
+    return `${authorData.value?.displayName} さんの記事です。`;
+  },
+});
 </script>
 
 <template>

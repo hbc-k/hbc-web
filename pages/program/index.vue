@@ -1,3 +1,12 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Program',
+  description: '放送部が制作している番組を紹介しています。',
+  ogTitle: 'Program',
+  ogDescription: '放送部が制作している番組を紹介しています。',
+});
+</script>
+
 <template>
   <PageHeader to="/blog">
     Program

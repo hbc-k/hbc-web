@@ -2,15 +2,33 @@
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 const route = useRoute();
 
+const category = route.params.category.toString();
+
+useSeoMeta({
+  titleTemplate: '%s | HBC Web - Blog',
+  title: () => {
+    return `${category} カテゴリーの記事`;
+  },
+  description: () => {
+    return `${category} カテゴリーの記事です。`;
+  },
+  ogTitle: () => {
+    return `${category} カテゴリーの記事`;
+  },
+  ogDescription: () => {
+    return `${category} カテゴリーの記事です。`;
+  },
+});
+
 interface BlogPost extends ParsedContent {
-  author: string;
-  category: string;
-  tags: string[];
-  coverImage: string;
-  createDate: string;
-  updateDate: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+  coverImage?: string;
+  createDate?: string;
+  updateDate?: string;
 }
-const { data: blogPosts } = await useAsyncData(`${route.params.category.toString()}Posts`, () =>
+const { data: blogPosts } = await useAsyncData(`${category}Posts`, () =>
   queryContent<BlogPost>('blog', 'posts')
     .only(['_path', 'title', 'description', 'author', 'category', 'coverImage', 'createDate'])
     .where({ category: route.params.category.toString() })

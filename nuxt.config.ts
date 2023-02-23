@@ -43,13 +43,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'ja',
       },
-      title: 'HBC Web - 県広放送部公式Webサイト',
-      meta: [
-        {
-          name: 'description',
-          content: '広島県立広島中学校・広島高等学校 放送部（Hiroshima Broadcasting Club）の公式Webサイトです。放送部の活動などを紹介しています。',
-        },
-      ],
       link: [
         { rel: 'manifest', href: '/manifest.json' },
         { rel: 'icon', href: '/favicon.ico' },

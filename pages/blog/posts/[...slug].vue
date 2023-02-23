@@ -1,13 +1,47 @@
+<script setup lang="ts">
+import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
+const route = useRoute();
+
+interface BlogPost extends ParsedContent {
+  author?: string;
+  category?: string;
+  tags?: string[];
+  coverImage?: string;
+  createDate?: string;
+  updateDate?: string;
+}
+
+const { data: doc } = await useAsyncData([...route.params.slug].join(), () => queryContent<BlogPost>().where({ _path: route.path }).findOne());
+
+useSeoMeta({
+  titleTemplate: '%s | HBC Web - Blog',
+  title: () => {
+    return `${doc.value?.title}`;
+  },
+  description: () => {
+    return doc.value?.description;
+  },
+  ogTitle: () => {
+    return `${doc.value?.title}`;
+  },
+  ogDescription: () => {
+    return doc.value?.description;
+  },
+  ogType: 'article',
+});
+</script>
+
 <template>
   <PageHeader to="/blog">
     Blog
     <template #detail>部員が活動の様子をお届け！</template>
   </PageHeader>
-  <ContentDoc v-slot="{ doc }">
+  <div v-if="doc">
     <div class="mx-auto max-w-3xl">
       <article class="my-8 rounded-md bg-white p-4 py-8 shadow sm:px-8">
         <div class="mb-6 flex aspect-[1200_/_630] h-auto w-full items-center overflow-hidden rounded-md bg-gray-200">
-          <NuxtPicture :src="doc.coverImage" width="1200" height="630" quality="75" loading="lazy" />
+          <NuxtPicture v-if="doc.coverImage" :src="doc.coverImage" width="1200" height="630" quality="75" loading="lazy" />
+          <img v-else src="/img/ogp_default.webp" />
         </div>
         <div class="mb-6 border-b border-b-gray-300 pb-6">
           <ArticleAuthorTop :author="doc.author" class="mb-4" />
@@ -65,5 +99,5 @@
         </NuxtLink>
       </div>
     </div>
-  </ContentDoc>
+  </div>
 </template>

@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
+useSeoMeta({
+  title: 'HBC Web - 県広放送部公式Webサイト',
+  titleTemplate: '',
+  description: '広島県立広島中学校・広島高等学校 放送部（Hiroshima Broadcasting Club）の公式Webサイトです。放送部の活動などを紹介しています。',
+  ogTitle: 'HBC Web - 県広放送部公式Webサイト',
+  ogDescription: '広島県立広島中学校・広島高等学校 放送部（Hiroshima Broadcasting Club）の公式Webサイトです。放送部の活動などを紹介しています。',
+});
+
 interface Info extends ParsedContent {
   category: string;
   url: string;
@@ -8,16 +16,15 @@ interface Info extends ParsedContent {
   date: string;
   pin?: boolean;
 }
-
 const { data: pinnedInfos } = await useAsyncData('pinnedInfos', () => queryContent<Info>('info').where({ pin: true }).sort({ date: -1 }).find());
 
 interface BlogPost extends ParsedContent {
-  author: string;
-  category: string;
-  tags: string[];
-  coverImage: string;
-  createDate: string;
-  updateDate: string;
+  author?: string;
+  category?: string;
+  tags?: string[];
+  coverImage?: string;
+  createDate?: string;
+  updateDate?: string;
 }
 const { data: blogPosts } = await useAsyncData('recentPosts', () =>
   queryContent<BlogPost>('blog', 'posts')
@@ -45,7 +52,15 @@ onMounted(() => {
 
 <template>
   <header ref="firstContent" class="relative bg-black">
-    <video src="/img/index_header.mp4" type="video/mp4" autoplay loop muted playsinline class="h-[120vw] w-screen object-cover sm:h-screen"></video>
+    <video
+      src="/img/index_header.mp4"
+      type="video/mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      class="h-[120vw] w-screen bg-black object-cover sm:h-screen"
+    ></video>
     <div class="absolute top-0 w-full">
       <div class="mx-auto max-w-7xl">
         <div class="flex h-[120vw] flex-col items-center justify-center sm:h-screen sm:items-start">
