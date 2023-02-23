@@ -63,7 +63,7 @@ useSeoMeta({
                   <font-awesome-icon icon="fa-regular fa-clock" />
                   <span class="ml-1">{{ new Date(doc.createDate).toLocaleDateString('sv-SE') }}</span>
                 </div>
-                <div class="ml-2">
+                <div v-if="doc.updateDate" class="ml-2">
                   <font-awesome-icon icon="fa-solid fa-clock-rotate-left" />
                   <span class="ml-1">{{ new Date(doc.updateDate).toLocaleDateString('sv-SE') }}</span>
                 </div>
@@ -76,19 +76,26 @@ useSeoMeta({
               </div>
             </div>
           </div>
-          <h1 class="text-3xl font-bold">{{ doc.title }}</h1>
-          <p class="mt-2 text-gray-500">{{ doc.description }}</p>
-          <div class="mt-3 text-gray-500">
+          <h1 class="text-2xl font-bold sm:text-3xl">{{ doc.title }}</h1>
+          <p v-if="doc.description" class="mt-2 text-gray-500">{{ doc.description }}</p>
+          <div v-if="doc.tags" class="mt-3 text-gray-500">
             <font-awesome-icon icon="fa-solid fa-tags" />
-            <span class="ml-1">
-              <NuxtLink v-for="tag in doc.tags" :key="tag" :to="`/blog/tag/${tag}`" class="mr-1 underline-offset-2 hover:underline">
+            <span class="ml-2">
+              <NuxtLink
+                v-for="tag in doc.tags"
+                :key="tag"
+                :to="`/blog/tag/${tag}`"
+                class="mr-2 rounded bg-gray-200 px-1 py-0.5 underline-offset-2 hover:underline"
+              >
                 {{ tag }}
               </NuxtLink>
             </span>
           </div>
         </div>
         <main class="prose max-w-none">
-          <ContentRenderer :value="doc" />
+          <ContentRenderer :value="doc">
+            <ContentRendererMarkdown :value="doc" />
+          </ContentRenderer>
         </main>
       </article>
     </div>
