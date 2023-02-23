@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 const route = useRoute();
+const $img = useImage();
 
 interface BlogPost extends ParsedContent {
   author?: string;
@@ -26,6 +27,16 @@ useSeoMeta({
   },
   ogDescription: () => {
     return doc.value?.description;
+  },
+  ogImage: () => {
+    if (doc.value?.coverImage) {
+      return `https://hbc-web.vercel.app${$img(doc.value?.coverImage, {
+        width: 1200,
+        height: 630,
+      })}`;
+    } else {
+      return 'https://hbc-web.vercel.app/img/ogp_default.webp';
+    }
   },
   ogType: 'article',
 });
