@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['YakuHanJPs_Narrow', 'Inter', 'IBM Plex Sans JP', 'sans-serif'],
+        wo_yakuhan: ['Inter', 'IBM Plex Sans JP', 'sans-serif'],
       },
     },
   },
