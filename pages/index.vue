@@ -64,7 +64,7 @@ onMounted(() => {
     <div class="absolute top-0 w-full">
       <div class="mx-auto max-w-7xl">
         <div class="flex h-[120vw] flex-col items-center justify-center sm:h-screen sm:items-start">
-          <div class="px-4 text-black sm:px-6 lg:px-8">
+          <div class="px-4 font-['Inter',_'sans-serif'] text-black sm:px-6 lg:px-8">
             <h1 class="text-[2.5rem] font-light uppercase leading-snug sm:text-7xl sm:leading-snug">
               <span class="bg-white px-3">Hiroshima<br /></span><span class="bg-white px-3">Broadcasting<br /></span
               ><span class="bg-white px-3">Club</span>
