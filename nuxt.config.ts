@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 
   // https://tailwindcss.com/docs/guides/nuxtjs#3
   // https://fontawesome.com/docs/web/use-with/vue/use-with
-  css: ['~/assets/css/main.css', '@fortawesome/fontawesome-svg-core/styles.css'],
+  css: ['~/assets/css/main.css', '@fortawesome/fontawesome-svg-core/styles.css', 'yakuhanjp/dist/css/yakuhanjp_s-narrow.css'],
 
   // https://tailwindcss.com/docs/guides/nuxtjs#3
   postcss: {
