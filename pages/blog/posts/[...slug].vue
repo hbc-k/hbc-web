@@ -35,7 +35,7 @@ useSeoMeta({
         height: 630,
       })}`;
     } else {
-      return 'https://hbc-web.vercel.app/img/ogp_default.webp';
+      return 'https://hbc-web.vercel.app/img/ogp_default.png';
     }
   },
   ogType: 'article',
