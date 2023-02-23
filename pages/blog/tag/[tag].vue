@@ -11,7 +11,7 @@ useSeoMeta({
     return `タグに ${route.params.tag.toString()} を含む記事です。`;
   },
   ogTitle: () => {
-    return `タグに ${route.params.tag.toString()} を含む記事`;
+    return `タグに ${route.params.tag.toString()} を含む記事 | HBC Web - Blog`;
   },
   ogDescription: () => {
     return `タグに ${route.params.tag.toString()} を含む記事です。`;

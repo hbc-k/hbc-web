@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'Contact',
   description: '放送部へのお問い合わせについて掲載しています。',
-  ogTitle: 'Contact',
+  ogTitle: 'HBC Web - Contact',
   ogDescription: '放送部へのお問い合わせについて掲載しています。',
 });
 </script>

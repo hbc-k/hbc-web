@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'Program',
   description: '放送部が制作している番組を紹介しています。',
-  ogTitle: 'Program',
+  ogTitle: 'HBC Web - Program',
   ogDescription: '放送部が制作している番組を紹介しています。',
 });
 </script>

@@ -13,7 +13,7 @@ useSeoMeta({
     return `${category} カテゴリーの記事です。`;
   },
   ogTitle: () => {
-    return `${category} カテゴリーの記事`;
+    return `${category} カテゴリーの記事 | HBC Web - Blog`;
   },
   ogDescription: () => {
     return `${category} カテゴリーの記事です。`;

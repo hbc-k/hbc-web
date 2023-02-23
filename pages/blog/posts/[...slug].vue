@@ -23,7 +23,7 @@ useSeoMeta({
     return doc.value?.description;
   },
   ogTitle: () => {
-    return `${doc.value?.title}`;
+    return `${doc.value?.title} | HBC Web - Blog`;
   },
   ogDescription: () => {
     return doc.value?.description;

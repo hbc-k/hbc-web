@@ -38,7 +38,7 @@ useSeoMeta({
     return `${authorData.value?.displayName} さんの記事です。`;
   },
   ogTitle: () => {
-    return `${authorData.value?.displayName} さんの記事`;
+    return `${authorData.value?.displayName} さんの記事 | HBC Web - Blog`;
   },
   ogDescription: () => {
     return `${authorData.value?.displayName} さんの記事です。`;

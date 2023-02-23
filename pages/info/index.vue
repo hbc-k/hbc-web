@@ -4,7 +4,7 @@ import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 useSeoMeta({
   title: 'Information',
   description: '放送部からのお知らせを掲載しています。',
-  ogTitle: 'Information',
+  ogTitle: 'HBC Web - Information',
   ogDescription: '放送部からのお知らせを掲載しています。',
 });
 

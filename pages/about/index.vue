@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'About',
   description: '放送部について紹介しています。',
-  ogTitle: 'About',
+  ogTitle: 'HBC Web - About',
   ogDescription: '放送部について紹介しています。',
 });
 </script>
