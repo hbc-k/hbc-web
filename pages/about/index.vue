@@ -12,4 +12,5 @@ useSeoMeta({
     About
     <template #detail>放送部について</template>
   </PageHeader>
+  <div>このページは製作中です</div>
 </template>

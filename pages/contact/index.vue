@@ -12,4 +12,5 @@ useSeoMeta({
     Contact
     <template #detail>お問い合わせ</template>
   </PageHeader>
+  <div>このページは製作中です</div>
 </template>

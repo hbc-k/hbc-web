@@ -12,4 +12,5 @@ useSeoMeta({
     Program
     <template #detail>放送部制作の番組</template>
   </PageHeader>
+  <div>このページは製作中です</div>
 </template>
