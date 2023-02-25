@@ -1,3 +1,10 @@
+# HBC Web
+広島県立広島中学校・広島高等学校 放送部 公式Webサイト
+
+🔗 https://hbc-web.vercel.app/
+
+🔗 (develop) https://hbc-web-git-develop-hbc-k.vercel.app/
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
