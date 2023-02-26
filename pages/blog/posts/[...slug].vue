@@ -49,7 +49,7 @@ useSeoMeta({
   </PageHeader>
   <div v-if="doc">
     <div class="mx-auto max-w-3xl">
-      <article class="my-8 rounded-md bg-white p-4 py-8 shadow sm:px-8">
+      <article class="my-8 rounded-md bg-white px-4 py-8 shadow sm:px-8">
         <div class="mb-6 flex aspect-[1200_/_630] h-auto w-full items-center overflow-hidden rounded-md bg-gray-200">
           <NuxtPicture v-if="doc.coverImage" :src="doc.coverImage" width="1200" height="630" quality="75" loading="lazy" />
           <img v-else src="/img/ogp_default.webp" />
