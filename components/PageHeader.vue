@@ -18,6 +18,11 @@ onMounted(() => {
   const observer = new IntersectionObserver(handler, { rootMargin: '-60px 0px 0px 0px' });
   observer.observe(firstContent.value);
 });
+
+onBeforeRouteLeave(() => {
+  if (!onScroll) return;
+  onScroll(false);
+});
 </script>
 
 <template>
