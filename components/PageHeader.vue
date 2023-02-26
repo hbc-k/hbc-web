@@ -12,16 +12,11 @@ onMounted(() => {
   if (!onScroll) return;
   const handler = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
-      onScroll(!entry.isIntersecting);
+      onScroll(!entry.isIntersecting && window.scrollY > 0);
     });
   };
   const observer = new IntersectionObserver(handler, { rootMargin: '-60px 0px 0px 0px' });
   observer.observe(firstContent.value);
-});
-
-onBeforeRouteLeave(() => {
-  if (!onScroll) return;
-  onScroll(false);
 });
 </script>
 
