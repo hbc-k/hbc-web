@@ -25,8 +25,8 @@ const links: { name: string; to: string }[] = [
   >
     <div
       v-bind:class="{
-        'opacity-100': scroll,
         'opacity-0': !scroll,
+        'opacity-100': scroll,
       }"
       class="absolute inset-0 -z-10 border-b bg-white bg-opacity-80 backdrop-blur-lg transition-opacity"
     ></div>
