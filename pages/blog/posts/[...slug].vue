@@ -96,6 +96,7 @@ useSeoMeta({
           <ContentRenderer :value="doc">
             <ContentRendererMarkdown :value="doc" />
           </ContentRenderer>
+          <SNSEmbed />
         </main>
       </article>
     </div>

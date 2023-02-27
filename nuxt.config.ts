@@ -49,6 +49,18 @@ export default defineNuxtConfig({
         { rel: 'icon', href: '/icons/icon.svg', type: 'image/svg+xml' },
         { rel: 'apple-touch-icon', href: '/icons/apple-touch-icon.png' },
       ],
+      script: [
+        {
+          async: true,
+          defer: true,
+          src: 'https://platform.twitter.com/widgets.js',
+        },
+        {
+          async: true,
+          defer: true,
+          src: 'https://www.instagram.com/embed.js',
+        },
+      ],
     },
   },
 });
