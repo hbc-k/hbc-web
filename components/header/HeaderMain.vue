@@ -1,18 +1,10 @@
 <script setup lang="ts">
 interface Props {
+  links: { name: string; to: string }[];
   scroll?: boolean;
 }
 
 const Props = defineProps<Props>();
-
-const links: { name: string; to: string }[] = [
-  { name: 'Home', to: '/' },
-  { name: 'About', to: '/about' },
-  { name: 'Program', to: '/program' },
-  { name: 'Info', to: '/info' },
-  { name: 'Blog', to: '/blog' },
-  { name: 'Contact', to: '/contact' },
-];
 </script>
 
 <template>
@@ -46,7 +38,7 @@ const links: { name: string; to: string }[] = [
             </li>
           </ul>
         </nav>
-        <div class="md:hidden"><font-awesome-icon icon="fa-solid fa-bars" class="text-2xl" /></div>
+        <HeaderMenuButton class="md:hidden" />
       </div>
     </div>
   </div>
