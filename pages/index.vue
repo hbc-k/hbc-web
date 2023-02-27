@@ -122,6 +122,41 @@ onMounted(() => {
       </div>
     </div>
   </section>
+  <section class="bg-gray-800 text-white">
+    <div class="mx-auto max-w-7xl">
+      <div class="px-4 py-10 sm:px-6 lg:px-8">
+        <div class="mb-8">
+          <div class="items-center text-center">
+            <h2 class="inline text-2xl font-bold uppercase">What's Next?</h2>
+            <span class="relative ml-2 text-xl"><font-awesome-icon icon="fa-solid fa-right-long" /></span>
+            <p class="mt-2 text-sm">放送予定の番組</p>
+          </div>
+        </div>
+        <div>
+          <ul class="grid gap-6">
+            <li class="flex items-center">
+              <div class="mr-4 shrink-0 text-gray-300">2023-03-10</div>
+              <div>
+                <div class="mr-4 mb-1">イベントピック</div>
+                <h2 class="text-lg font-bold">卒業記念放送</h2>
+                <p class="mt-1 text-sm">卒業を控えた高校３年生に学校生活の思い出をインタビュー！ 在校生へのメッセージも？</p>
+              </div>
+            </li>
+            <li class="flex items-center">
+              <div class="mr-4 shrink-0 text-gray-300">2023-03-17</div>
+              <div>
+                <div class="mr-4 mb-1">Point of Music!</div>
+                <h2 class="text-lg font-bold">本当は教えたくない！ 私だけのイチオシアーティスト特集</h2>
+                <p class="mt-1 text-sm">
+                  「大好きなのに、なぜかみんな知らない……」 そんなアーティストを一斉調査！ あなたもアーティストへの愛を語ってみませんか？
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
   <section>
     <div class="mx-auto max-w-7xl">
       <div class="px-4 py-10 sm:px-6 lg:px-8">
