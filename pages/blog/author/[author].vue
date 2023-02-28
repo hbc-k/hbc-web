@@ -3,6 +3,8 @@ import type { ParsedContent } from '@nuxt/content/dist/runtime/types';
 
 const route = useRoute();
 
+const author = route.params.author.toString();
+
 interface BlogPost extends ParsedContent {
   author?: string;
   category?: string;
@@ -11,10 +13,10 @@ interface BlogPost extends ParsedContent {
   createDate?: string;
   updateDate?: string;
 }
-const { data: blogPosts } = await useAsyncData(`${route.params.author.toString()}Posts`, () =>
+const { data: blogPosts } = await useAsyncData(`${author}Posts`, () =>
   queryContent<BlogPost>('blog', 'posts')
     .only(['_path', 'title', 'description', 'author', 'category', 'coverImage', 'createDate'])
-    .where({ author: route.params.author.toString() })
+    .where({ author: author })
     .sort({ createDate: -1 })
     .find()
 );
@@ -25,9 +27,7 @@ interface Author extends ParsedContent {
   icon?: string;
   bio?: string;
 }
-const { data: authorData } = await useAsyncData(route.params.author.toString(), () =>
-  queryContent<Author>('blog', 'author').where({ userName: route.params.author.toString() }).findOne()
-);
+const { data: authorData } = await useAsyncData(author, () => queryContent<Author>('blog', 'author').where({ userName: author }).findOne());
 
 useSeoMeta({
   titleTemplate: '%s | HBC Web - Blog',
@@ -68,7 +68,7 @@ useSeoMeta({
             <div class="ml-4">
               <div class="text-lg">
                 <div v-if="authorData && authorData.displayName" class="mr-1 block font-bold">{{ authorData.displayName }}</div>
-                <div class="block font-bold text-gray-500">@{{ $route.params.author.toString() }}</div>
+                <div class="block font-bold text-gray-500">@{{ author }}</div>
               </div>
               <p class="mt-2">{{ authorData?.bio }}</p>
             </div>

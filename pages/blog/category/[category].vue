@@ -31,7 +31,7 @@ interface BlogPost extends ParsedContent {
 const { data: blogPosts } = await useAsyncData(`${category}Posts`, () =>
   queryContent<BlogPost>('blog', 'posts')
     .only(['_path', 'title', 'description', 'author', 'category', 'coverImage', 'createDate'])
-    .where({ category: route.params.category.toString() })
+    .where({ category: category })
     .sort({ createDate: -1 })
     .find()
 );
@@ -46,7 +46,7 @@ const { data: blogPosts } = await useAsyncData(`${category}Posts`, () =>
     <section class="mx-auto max-w-7xl">
       <div class="my-8 px-4 sm:px-6 lg:px-8">
         <div class="mb-4 text-xl font-bold">
-          <font-awesome-icon icon="fa-regular fa-folder" class="mr-1" />{{ $route.params.category.toString() }} の記事 ― {{ blogPosts?.length }} 件
+          <font-awesome-icon icon="fa-regular fa-folder" class="mr-1" />{{ category }} の記事 ― {{ blogPosts?.length }} 件
         </div>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <BlogCard v-for="doc in blogPosts" :key="doc.title" :doc="doc" />
