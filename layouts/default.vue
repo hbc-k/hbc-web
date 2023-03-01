@@ -47,3 +47,9 @@ provide('showMenu', () => {
     </footer>
   </div>
 </template>
+
+<style>
+html {
+  overflow-y: scroll;
+}
+</style>
