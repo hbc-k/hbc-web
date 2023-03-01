@@ -1,4 +1,32 @@
 <script setup lang="ts">
+const yearlySchedule: { month: string; activity: string }[] = [
+  {
+    month: '4月',
+    activity: '部活動紹介',
+  },
+  {
+    month: '6月',
+    activity:
+      '文化祭に向けて（文化祭特別放送の準備、音響設備の調整など）\n高3引退（引退放送）\n小学生向けオープンスクールの司会\nＮＨＫ杯全国高校放送コンテスト\nＮＨＫ杯全国高校放送コンテスト',
+  },
+  {
+    month: '8月',
+    activity: '中学生向けオープンスクールの司会・部活紹介',
+  },
+  {
+    month: '10月',
+    activity: '総合文化祭（地区大会）',
+  },
+  {
+    month: '1月',
+    activity: '高3生共通テスト応援放送',
+  },
+  {
+    month: '2月',
+    activity: '中学校ことば科発表会撮影\n高等学校英語科パフォーマンスコンテスト撮影',
+  },
+];
+
 useSeoMeta({
   title: 'About',
   description: '放送部について紹介しています。',
@@ -65,56 +93,10 @@ useSeoMeta({
                   </tr>
                 </thead>
                 <tbody class="bg-white">
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">4月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">部活動紹介</td>
+                  <tr v-for="schedule in yearlySchedule">
+                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8" v-text="schedule.month"></td>
+                    <td class="prewrap whitespace-pre-wrap border-b border-gray-100 p-4 pb-3 pr-8" v-text="schedule.activity"></td>
                   </tr>
-                  <!-- <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">5月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8"></td>
-                  </tr> -->
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">6月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">
-                      文化祭に向けて（文化祭特別放送の準備、音響設備の調整など）<br />高3引退（引退放送）<br />小学生向けオープンスクールの司会<br />ＮＨＫ杯全国高校放送コンテスト<br />ＮＨＫ杯全国高校放送コンテスト
-                    </td>
-                  </tr>
-                  <!-- <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">7月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8"></td>
-                  </tr> -->
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">8月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">中学生向けオープンスクールの司会・部活紹介</td>
-                  </tr>
-                  <!-- <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">9月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8"></td>
-                  </tr> -->
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">10月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">総合文化祭（地区大会）</td>
-                  </tr>
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">11月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">総合文化祭（県大会）</td>
-                  </tr>
-                  <!-- <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">12月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8"></td>
-                  </tr> -->
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">1月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">高3生共通テスト応援放送</td>
-                  </tr>
-                  <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">2月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8">中学校ことば科発表会撮影<br />高等学校英語科パフォーマンスコンテスト撮影</td>
-                  </tr>
-                  <!-- <tr>
-                    <td class="whitespace-nowrap border-b border-gray-100 p-4 pb-3 pl-8">3月</td>
-                    <td class="border-b border-gray-100 p-4 pb-3 pr-8"></td>
-                  </tr> -->
                 </tbody>
               </table>
             </div>
