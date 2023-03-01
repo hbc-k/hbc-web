@@ -52,18 +52,10 @@ onMounted(() => {
 
 <template>
   <header ref="firstContent" class="relative bg-black">
-    <video
-      src="/img/index_header.mp4"
-      type="video/mp4"
-      autoplay
-      loop
-      muted
-      playsinline
-      class="h-[120vw] w-screen bg-black object-cover sm:h-screen"
-    ></video>
+    <video src="/img/index_header.mp4" type="video/mp4" autoplay loop muted playsinline class="h-screen-small w-screen bg-black object-cover"></video>
     <div class="absolute top-0 w-full">
       <div class="mx-auto max-w-7xl">
-        <div class="flex h-[120vw] flex-col items-center justify-center sm:h-screen sm:items-start">
+        <div class="flex h-screen-small flex-col items-center justify-center sm:items-start">
           <div class="px-4 font-wo_yakuhan text-black sm:px-6 lg:px-8">
             <h1 class="text-[2.5rem] font-light uppercase leading-snug sm:text-7xl sm:leading-snug">
               <span class="bg-white px-3">Hiroshima<br /></span><span class="bg-white px-3">Broadcasting<br /></span

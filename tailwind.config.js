@@ -14,6 +14,9 @@ module.exports = {
         sans: ['YakuHanJPs_Narrow', 'Inter', 'IBM Plex Sans JP', 'sans-serif'],
         wo_yakuhan: ['Inter', 'IBM Plex Sans JP', 'sans-serif'],
       },
+      height: {
+        'screen-small': '100svh',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
