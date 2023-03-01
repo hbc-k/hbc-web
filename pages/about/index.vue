@@ -56,8 +56,8 @@ useSeoMeta({
         </div>
         <div class="mt-8">
           <div class="max-w-3xl overflow-hidden rounded-md border bg-gray-100">
-            <div class="my-6">
-              <table class="w-full shadow">
+            <div class="my-6 shadow-sm">
+              <table class="w-full">
                 <thead class="text-gray-700">
                   <tr>
                     <th class="whitespace-nowrap border-b p-4 pb-3 pl-8 text-left font-medium">月</th>
