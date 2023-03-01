@@ -75,7 +75,7 @@ onMounted(() => {
         <div class="mb-8 text-gray-800">
           <div class="items-center text-center">
             <span class="relative bottom-0.5 mr-3 text-xl"><font-awesome-icon icon="fa-solid fa-bullhorn" /></span>
-            <h2 class="inline text-2xl uppercase">Information</h2>
+            <h2 class="inline text-2xl font-light uppercase">Information</h2>
             <p class="mt-2 text-sm">放送部からのお知らせ</p>
           </div>
         </div>
@@ -93,7 +93,7 @@ onMounted(() => {
       <div class="px-4 py-10 sm:px-6 lg:px-8">
         <div class="mb-10 text-gray-800">
           <div class="items-center text-center">
-            <h2 class="inline text-2xl uppercase">About HBC</h2>
+            <h2 class="inline text-2xl font-light uppercase">About HBC</h2>
             <p class="mt-2 text-sm">放送部について</p>
           </div>
         </div>
@@ -155,7 +155,7 @@ onMounted(() => {
         <div class="mb-8 text-gray-800">
           <div class="items-center text-center">
             <span class="relative bottom-0.5 mr-3 text-xl"><font-awesome-icon icon="fa-solid fa-pen-clip" /></span>
-            <h2 class="inline text-2xl uppercase">Blog</h2>
+            <h2 class="inline text-2xl font-light uppercase">Blog</h2>
             <p class="mt-2 text-sm">不定期更新</p>
           </div>
         </div>
