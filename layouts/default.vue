@@ -20,7 +20,7 @@ provide('showMenu', () => {
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col overflow-hidden text-gray-900">
+  <div class="flex min-h-screen-small flex-col overflow-hidden text-gray-900">
     <header class="fixed top-0 z-40 w-full">
       <HeaderMain :links="links" :scroll="scroll || showMenu" />
     </header>

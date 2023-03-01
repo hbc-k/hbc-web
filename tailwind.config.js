@@ -17,6 +17,9 @@ module.exports = {
       height: {
         'screen-small': '100svh',
       },
+      minHeight: {
+        'screen-small': '100svh',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
